@@ -1,0 +1,43 @@
+service: ${self:custom.product}-${self:custom.component}
+
+frameworkVersion: '>=2.5.0 <3.0.0'
+
+plugins:
+  - serverless-plugin-git-variables
+  - '@2iq/serverless-plugin-ib2'
+
+provider:
+  name: aws
+  region: ${opt:region, 'eu-central-1'}
+  stage: ${opt:stage, 'staging'}
+  profile: ${opt:aws-profile, 'sandbox'}
+  deploymentBucket:
+    name: ${ib2:base.deploymentBucket()}
+  deploymentPrefix: ${ib2:base.deploymentPrefix()}
+  stackTags:
+    Env: ${self:provider.stage}
+
+custom:
+  product: legacy-events
+  component: s3
+
+resources:
+  - ${ib2:description}
+
+  - Resources:
+      XfGlobal2Bucket:
+        Type: AWS::S3::Bucket
+        Properties:
+          BucketName: xf.${self:custom.component}.${self:custom.product}.${self:provider.stage}.${self:provider.region}.${ssm:/ib2/aws/accountDomainName}
+          PublicAccessBlockConfiguration:
+            BlockPublicAcls: true
+            BlockPublicPolicy: true
+            IgnorePublicAcls: true
+            RestrictPublicBuckets: true
+
+  - Outputs:
+      LegacyEventsXfGlobal2BucketName:
+        Value: !Ref XfGlobal2Bucket
+
+      LegacyEventsXfGlobal2BucketArn:
+        Value: !GetAtt XfGlobal2Bucket.Arn
