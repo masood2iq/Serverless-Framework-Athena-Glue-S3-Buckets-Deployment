@@ -11,11 +11,12 @@ Develop, deploy, troubleshoot, and secure your serverless applications with radi
 #Setting Up the Serverless Framework with AWS
 
 ## Step - 1
-Login to your AWS account, go to IAM (Identity and Access Management) console
-
-Click “Users” from left navigation panel and click on “Add users” button
+Login to your AWS account, go to IAM (Identity and Access Management) console.
+Click “Users” from left navigation panel and click on “Add users” button.
+![](./images/image6.png)
 
 Add user name and check box “Access key - Programmatic access” and click “Next Permissions” button
+![](./images/image6.png)
 
 Click on “Attach existing policies directly”, check box “AdministratorAccess” and click on “Next: Tags” button
 
@@ -62,27 +63,35 @@ Go into the project directory and check cd athena-project ls
 ## Step - 4
 Basic serverless.yml file look like this which you have to edit with your project code. To view it run command.
 
-cat serverless.yml
+`cat serverless.yml`
 
 Now open your file in your favorite editor Vim or Nano to edit it, and run the following command.
 
-vim serverless.yml OR nano serverless.yml
+`vim serverless.yml` OR `nano serverless.yml`
 
+<p>
 As you can see serverless defines the service with our project name, selecting AWS provider, where we are defining our profile which we created at the time of credentials configuration, and defining the environment with the AWS region where we want to deploy resources.
-
 We are also defining the custom resources of already existing S3 buckets with their paths which we are using in the glue crawler and Athena workgroup.
-
 Finally, we are creating a simple SQL query with Athena workgroup where we are providing a glue database with a glue table created by a glue crawler with an S3 bucket data directory name.
+</p>
 
 ## Step - 5
-Now we need to deploy our project through command
+Now we need to deploy our project through command.
 
-sls deploy
+`sls deploy`
+
+![](./images/image3.png)
+![](./images/image23.png)
+![](./images/image20.png)
 
 Further you can check on AWS CloudFormation console to verify.
+![](./images/image21.png)
 
 ## Step - 6
-Finally you can cleanup your resources to avoid any extra charges
+Finally you can cleanup your resources to avoid any extra charges.
 
-sls remove
+`sls remove`
 
+![](./images/image16.png)
+![](./images/image11.png)
+![](./images/image17.png)
