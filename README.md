@@ -1,6 +1,6 @@
-# Serverless_S3_Glue_Athena_Deployment
+# Serverless_Framework_Athena_Glue_S3_Buckets_Deployment
 ## Description
-Serverless (sls) deployment of S3 Buckets, Glue, Athena, and Simple Query from Scratch.
+AWS Athena, Glue Database, Glue Crawler and S3 buckets deployment through Serverless (sls) Framework.
 
 ## Overview
 Serverless is a cloud-native development model that allows developers to build and run applications without having to manage servers. There are still servers in serverless, but they are abstracted away from app development. Or you can say Serverless is an application delivery model where cloud providers automatically intercept user requests and computing events to dynamically allocate and scale compute resources, allowing you to run applications without having to provision, configure, manage, or maintain server infrastructure.
@@ -8,7 +8,7 @@ Serverless is a cloud-native development model that allows developers to build a
 ## Serverless Framework
 Develop, deploy, troubleshoot, and secure your serverless applications with radically less overhead and cost by using the Serverless Framework. The Serverless Framework consists of an open-source CLI and a hosted dashboard. Together, they provide you with full serverless application lifecycle management.
 
-Setting Up the Serverless Framework with AWS
+#Setting Up the Serverless Framework with AWS
 
 ## Step - 1
 Login to your AWS account, go to IAM (Identity and Access Management) console
