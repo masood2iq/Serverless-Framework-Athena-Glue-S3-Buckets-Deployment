@@ -80,7 +80,7 @@ Now we need to deploy our project through command.
 
 `sls deploy`
 
-![](./images/image3.png)
+![](./images/image3.png)<br>
 ![](./images/image23.png)
 ![](./images/image20.png)
 
@@ -92,6 +92,6 @@ Finally you can cleanup your resources to avoid any extra charges.
 
 `sls remove`
 
-![](./images/image16.png)
+![](./images/image16.png)<br>
 ![](./images/image11.png)
 ![](./images/image17.png)
