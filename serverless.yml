@@ -82,19 +82,21 @@ resources:
                   Resource: '*'
                 - Effect: Allow
                   Action:
-                    - logs:*
-                  Resource: '*'
-                - Effect: Allow
-                  Action:
                     - s3:GetObject
                     - s3:PutObject
                   Resource:
                     - arn:aws:s3:::aws-glue-*/*
                     - arn:aws:s3:::*/*aws-glue-*/*
                     - arn:aws:s3:::aws-glue-*
+            PolicyName: AWSCloudWatchLogsAccess
+            PolicyDocument:
+              Statement:
                 - Effect: Allow
                   Action:
+                    - logs:CreateLogGroup
+                    - logs:CreateLogStream
                     - logs:GetLogEvents
+                    - logs:PutlogEvents
                   Resource:
                     - arn:aws:logs:*:*:/aws-glue/*
 
