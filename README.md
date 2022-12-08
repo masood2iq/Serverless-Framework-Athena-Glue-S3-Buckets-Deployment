@@ -58,18 +58,20 @@ Command will create three files in your project directory in which serverless.ym
 
   b. Run the following command directly create your project with directory and all files as sls create --template aws-nodejs --path athena-project
 
-  c. Go into the project directory and check
-     ```sh
-     cd athena-project
+  c. Go into the project directory and check(space,space,enter)
      ```
-     ```sh
-     ls
+     $ cd athena-project
      ```
+     
+     ```
+     $ ls
+     ```
+     
     ![](./images/image19.png)
     
 ## Step - 4
 Basic serverless.yml file look like this which you have to edit with your project code. To view it run command.(space, space, Enter)
-```sh
+```
 $ cat serverless.yml
 ```
 
