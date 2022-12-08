@@ -12,13 +12,13 @@ Develop, deploy, troubleshoot, and secure your serverless applications with radi
 
 ## Step - 1
 Login to your AWS account, go to IAM (Identity and Access Management) console.
-Click “Users” from left navigation panel and click on “Add users” button.
+Click “Users” from left navigation panel and click on “Add users” button.  
 ![](./images/image6.png)  
 
-Add user name and check box “Access key - Programmatic access” and click “Next Permissions” button
+Add user name and check box “Access key - Programmatic access” and click “Next Permissions” button  
 ![](./images/image4.png)  
 
-Click on “Attach existing policies directly”, check box “AdministratorAccess” and click on “Next: Tags” button
+Click on “Attach existing policies directly”, check box “AdministratorAccess” and click on “Next: Tags” button  
 ![](./images/image22.png)  
 
 Add Key, Value as required and click on “Next: Review” button  
@@ -30,7 +30,7 @@ Click on “Create user” button to create user.
 Finally download .csv credentials file and secure it so no one have access and click on “Close” button  
 ![](./images/image12.png)  
 
-Your ServerlessUser created.
+Your ServerlessUser created.  
 ![](./images/image13.png)  
 
 ## Step - 2
