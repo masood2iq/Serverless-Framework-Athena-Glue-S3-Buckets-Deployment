@@ -46,71 +46,97 @@ Login to your linux server to configure serverless. Before installing serverless
 ```
 $ apt update
 ```  
+
 ```
 $ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```  
+
 ```
 $ apt install -y nodejs
 ```  
 
 Check install versions with commands  
+
 ```
 $ node -v
 ```  
+
 ```
 $ npm -v
 ```  
+
 ![](./images/image15.png)  
 
 Following command install the serverless package  
+
 ```
 $ npm install -g serverless
 ```  
+
 ![](./images/image2.png)  
 
 To setup Serverless with AWS run the following command  
+
 ```
 $ serverless config credentials --provider aws --key your-account-key --secret your-account-secret --profile ServerlessUser
 ```  
+
 ![](./images/image9.png)  
+
 Use the credentials of the user you created in first step
 
 ## Step - 3
 Now we have to create our first project to deploy our resources on AWS for that we can do it by two ways  
+
 #### Way - 1
 Create a project directory with command  
+
 ```
 $ mkdir athena-project
 ```  
+
 ![](./images/image5.png)  
+
 ```
 $ cd athena-project
 ```  
+
 ![](./images/image8.png)  
+
 ```
 $ sls create --template aws-nodejs
 ```  
+
 ![](./images/image10.png)  
+
 Command will create three files in your project directory in which serverless.yml is the main file you can edit and configure for your project resources.  
+
 ![](./images/image7.png)
 
 #### Way - 2
 Run the following command directly create your project with directory and all files as  
+
 ```
 $ sls create --template aws-nodejs --path athena-project
 ```  
+
 ![](./images/image18.png)  
+
 Go into the project directory and check  
+
 ```
 $ cd athena-project
 ```  
+
 ```
 $ ls
 ```  
+
 ![](./images/image19.png)
     
 ## Step - 4
 Basic serverless.yml file look like this which you have to edit with your project code. To view it run command.  
+
 ```
 $ cat serverless.yml
 ```  
@@ -236,6 +262,7 @@ functions:
 ```
 
 Now open your file in your favorite editor Vim or Nano to edit it, and run the following command.  
+
 ```
 $ vim serverless.yml
 ```  
@@ -485,6 +512,7 @@ resources:
       Export:
         Name: !Sub "SampleQueryDate-name"
  ```  
+
 <p>
 As you can see serverless defines the service with our project name, selecting AWS provider, where we are defining our profile which we created at the time of credentials configuration, and defining the environment with the AWS region where we want to deploy resources.
 We are also defining the custom resources of already existing S3 buckets with their paths which we are using in the glue crawler and Athena workgroup.
@@ -493,21 +521,30 @@ Finally, we are creating a simple SQL query with Athena workgroup where we are p
 
 ## Step - 5
 Now we need to deploy our project through command.  
+
 ```
 $ sls deploy
 ```  
+
 ![](./images/image3.png)  
+
 ![](./images/image23.png)  
+
 ![](./images/image20.png)
 
 Further you can check on AWS CloudFormation console to verify.  
-![](./images/image21.png)
+
+![](./images/image21.png)  
 
 ## Step - 6
 Finally you can cleanup your resources to avoid any extra charges.  
+
 ```
 $ sls remove
 ```  
+
 ![](./images/image16.png)  
+
 ![](./images/image11.png)  
+
 ![](./images/image17.png)
