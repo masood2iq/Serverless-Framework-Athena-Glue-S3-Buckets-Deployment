@@ -48,32 +48,44 @@ To setup Serverless with AWS run the following command serverless config credent
 Use the credentials of the user you created in first step
 
 ## Step - 3
-Now we have to create our first project to deploy our resources on AWS for that we can do it by two ways as Create a project directory with command mkdir athena-project
-
-cd athena-project
-
-sls create --template aws-nodejs
-
+Now we have to create our first project to deploy our resources on AWS for that we can do it by two ways  
+### Way - 1
+Create a project directory with command  
+```
+$ mkdir athena-project
+```  
+![](./images/image5.png)  
+```
+$ cd athena-project
+```  
+![](./images/image8.png)  
+```
+$ sls create --template aws-nodejs
+```  
+![](./images/image10.png)  
 Command will create three files in your project directory in which serverless.yml is the main file you can edit and configure for your project resources.
+![](./images/image7.png)
 
-  b. Run the following command directly create your project with directory and all files as sls create --template aws-nodejs --path athena-project
-
-  c. Go into the project directory and check(space,space,enter)
-     ```
-     $ cd athena-project
-     ```
-     
-     ```
-     $ ls
-     ```
-     
-    ![](./images/image19.png)
+### Way - 2
+Run the following command directly create your project with directory and all files as  
+```
+$ sls create --template aws-nodejs --path athena-project
+```  
+![](./images/image18.png)  
+Go into the project directory and check  
+```
+$ cd athena-project
+```  
+```
+$ ls
+```  
+![](./images/image19.png)
     
 ## Step - 4
-Basic serverless.yml file look like this which you have to edit with your project code. To view it run command.(space, space, Enter)
+Basic serverless.yml file look like this which you have to edit with your project code. To view it run command.  
 ```
 $ cat serverless.yml
-```
+```  
 
 ```yaml
 # Welcome to Serverless!
